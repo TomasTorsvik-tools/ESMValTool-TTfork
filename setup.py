@@ -197,7 +197,6 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'cmorize_obs = esmvaltool.cmorizers.obs.cmorize_obs:main',
             'mip_convert_setup = '
             'esmvaltool.cmorizers.mip_convert.esmvt_mipconv_setup:main',
             'nclcodestyle = esmvaltool.utils.nclcodestyle.nclcodestyle:_main',
@@ -206,6 +205,10 @@ setup(
             'test_recipe = '
             'esmvaltool.utils.testing.recipe_settings.install_expand_run:main'
         ],
+        'esmvaltool_commands': [
+            'data = esmvaltool.cmorizers.obs.cmorize_obs:DataCommand'
+        ]
+
     },
     cmdclass={
         'lint': RunLinter,
